@@ -1,1 +1,28 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+$primary_color: #101922;
+$primary_font: 'Inter', sans-serif;
+$secondary_color: #1f2834;
+$text_title_color: #e1e1e1;
+$button_color: #1173d4;
+$button_color_hover: #0b345e;
+
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    button {
+        border-style: none;
+        font-weight: bold;
+        font-family: $primary_font;
+    }
+}
+
+
+body {
+    background-color: $primary_color;
+    font-family: $primary_font;
+    color: $text_title_color;
+}

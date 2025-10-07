@@ -1,0 +1,59 @@
+@import '../../styles.scss';
+
+.header {
+    width: 100vw;
+    background-color: $primary_color;
+    position: sticky;
+    top: 0;
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid $secondary_color;
+    z-index: 1000;
+    padding: 16px 32px;
+    font-size: 1.125rem;
+
+    .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .resume_button {
+            padding: 8px 16px; 
+            border-radius: 4px;
+            font-size: 1.25rem;
+            background-color: $button_color;
+            color: $text_title_color;
+            cursor: pointer;
+
+            
+        }
+        .resume_button:hover {
+            background-color: $button_color_hover;
+            transition: ease-in-out 0.2s;
+        }
+    }
+
+    .menu {
+        .menu_items {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 3.5rem;
+            list-style: none;
+
+            li {
+                position: relative;
+            }
+        }
+
+        .menu_items .active::after {
+            content: "";
+            display: block;
+            width: 100%;
+            height: 5px;
+            background: $text_title_color;
+            position: absolute;
+            margin-top: 8px;
+            border-radius: 16px 16px 0 0;
+        }
+    }
+}
