@@ -1,0 +1,31 @@
+@import '../../styles.scss';
+
+.footer {
+    position: relative;
+    max-height: 200px;
+    height: 100%;
+    bottom: 0;
+    backdrop-filter: blur(12px);
+    border-top: 1px solid $secondary_color;
+    z-index: 1000;
+    padding: 16px 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 1rem;
+    color: $paragraph_color;
+
+    div {
+        a {
+            font-size: 2rem;
+            margin: 0 0.5rem;
+            color: $paragraph_color;
+            transition: all 0.2s;
+        }
+
+        a:hover {
+            color: $shadow_color;
+        }
+    }
+}
