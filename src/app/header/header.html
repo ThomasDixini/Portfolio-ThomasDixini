@@ -5,9 +5,9 @@
         </a>
         <nav aria-label="Menu Principal" class="menu">
             <ul class="menu_items">
-                <li class="active">Sobre</li>
-                <li>Projetos</li>
-                <li>Contato</li>
+                <li><a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Sobre</a></li>
+                <li><a routerLink="/projects" routerLinkActive="active">Projetos</a></li>
+                <li><a routerLink="/contact" routerLinkActive="active">Contato</a></li>
             </ul>
         </nav>
         <button class="resume_button">Currículo</button>
