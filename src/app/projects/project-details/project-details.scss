@@ -1,0 +1,128 @@
+@import '../../../styles.scss';
+
+.project_details_section {
+    max-width: 1600px;
+    width: 100%;
+    margin: 64px auto;
+
+    .project_cover {
+        position: relative;
+        
+        img {
+            background-color: white;
+            width: 100%;
+            object-fit: contain;
+            max-height: 600px;
+            height: 100%;
+            border-radius: 16px;
+        }
+
+        .project_resume {
+            position: absolute;
+            top: 55%;
+            padding: 1.5rem;
+            
+            h3 {
+                font-size: 3rem;
+                font-weight: bold;
+                color: $text_title_color;
+            }
+
+            p {
+                font-size: 1.5rem;
+                font-weight: normal;
+                line-height: 1.6;
+                margin-top: 1rem;
+                color: $paragraph_color;
+            }
+        }
+    }
+
+    h2 {
+        margin-top: 5rem;
+        font-size: 3rem;
+        font-weight: bold;
+    }
+
+    p {
+        font-size: 1.5rem;
+        font-weight: normal;
+        line-height: 1.6;
+        margin-top: 1rem;
+        color: $paragraph_color;
+    }
+
+    .technologies {
+        list-style: none;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 1rem;
+
+        li {
+            padding: 8px 16px;
+            border-radius: 4px;
+            background-color: #0f2b45;
+            color: $button_color;
+            font-size: 1.5rem;
+            margin-top: 1.5rem;
+        }
+    }
+
+    .key_features {
+        list-style: none;
+        
+        span {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 1rem;
+
+            div {
+                background-color: $button_color;
+                width: 25px;
+                height: 25px;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+        }
+    }
+
+    .project_resume_buttons {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 1rem;
+        margin-top: 1rem;
+        
+        button:first-of-type {
+            padding: 8px 16px; 
+            border-radius: 4px;
+            font-size: 1.25rem;
+            background-color: $button_color;
+            color: $text_title_color;
+            cursor: pointer;
+        }
+
+        button:last-of-type {
+            padding: 8px 16px; 
+            font-size: 18px;
+            color: $button_color;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 4px;
+            background: rgba(255, 255, 255, 0.15); /* Transparente */
+            backdrop-filter: blur(10px); /* o segredo do efeito vidro */
+            -webkit-backdrop-filter: blur(10px); /* suporte para Safari */
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        button:hover {
+            background-color: $button_color_hover;
+            transition: ease-in-out 0.2s;
+        }
+    }
+}
