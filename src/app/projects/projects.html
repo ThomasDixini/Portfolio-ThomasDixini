@@ -1,31 +1,23 @@
 <section id="projects" class="projects_section" aria-labelledby="projects-section">
     <h2>Meus Projetos</h2>
     <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-        Autem ratione libero sit facere, deserunt dolor 
-        a earum voluptates aspernatur excepturi facilis eveniet 
-        debitis voluptas cum maiores. Sapiente optio neque vitae!
+        Explore uma seleção dos meus projetos mais recentes, mostrando minhas habilidades e experiências em desenvolvimento de software
     </p>
     <div class="options">
         <ul>
-            <li class="active">Todos</li>
-            <li>Web</li>
-            <li>Aplicativos</li>
+            @for (filter of filters; track $index) {
+                <li (click)="selectFilter(filter)" [class.active]="filter === selectedFilter">{{filter}}</li>
+            }
         </ul>
     </div>
     <div class="carousel_projects">
-        <p-carousel [value]="products" [numVisible]="3" [numScroll]="3" [circular]="true">
-            <ng-template let-product #item>
-                <article class="card">
-                    <img src="logo_app_1024.png" alt="Preview do Aplicativo de Estética"/>
+        <p-carousel [value]="projects" [numVisible]="3" [numScroll]="3" [circular]="true" >
+            <ng-template let-project #item>
+                <article class="card" [routerLink]="['/projects', project.id]">
+                    <img src="{{ project.image }}" alt="Preview do Aplicativo de Estética"/>
                     <div class="card_presentation">
-                        <h3>Aplicativo de Estética</h3>
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloribus, 
-                            vel impedit soluta dignissimos voluptatum cupiditate sed 
-                            repudiandae nostrum similique error tenetur incidunt aperiam temporibus, 
-                            molestias aliquid officia ipsa rem at.
-                        </p>
+                        <h3>{{ project.name }}</h3>
+                        <p>{{ project.description }}</p>
                     </div>
                 </article>
             </ng-template>

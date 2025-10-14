@@ -2,12 +2,8 @@
     <div class="project_cover">
         <img src="logo_app_1024.png" alt="Preview do Aplicativo de Estética"/>
         <div class="project_resume">
-            <h3>Título do Projeto</h3>
-            <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                Optio odio eius ipsa cum ducimus dignissimos nisi iusto asperiores veniam, 
-                voluptatem voluptatibus minus voluptas officia impedit eos alias. Fugit, nihil corrupti?
-            </p>
+            <h3>{{ project.name }}</h3>
+            <p> {{ project.resume }} </p>
             <div class="project_resume_buttons">
                 <button>Ver demo</button>
                 <button>Github Repo</button>
@@ -17,18 +13,14 @@
     <h2>
         Descrição
     </h2>
-    <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci quasi, magni odio magnam excepturi, cumque accusamus deleniti 
-        optio porro iusto eaque tempora voluptatum officia sequi 
-        aliquid autem error laudantium. Consequatur.
-    </p>
+    <p> {{ project.description }}</p>
     <h2>
         Tecnologias Usadas
     </h2>
     <ul class="technologies">
-        <li>React Native</li>
-        <li>C#</li>
-        <li>Sql Server</li>
+        @for (technology of project.technologies; track $index) {
+            <li>{{ technology }}</li>
+        }
     </ul>
     <h2>
         Desafios e Soluções

@@ -9,4 +9,10 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
 })
 export class Header {
 
+  baixarArquivo(){
+    const link = document.createElement('a');
+    link.href = 'docs/curriculo.pdf'; 
+    link.download = 'curriculo.pdf';         
+    link.click();
+  }
 }

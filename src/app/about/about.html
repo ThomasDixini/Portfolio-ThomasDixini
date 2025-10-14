@@ -5,53 +5,25 @@
         <div class="perfil_text">
             <h2>Olá, Eu sou Thomás Dixini</h2>
             <p> 
-                Lorem ipsum dolor sit amet consectetur 
-                adipisicing elit. Aut eum tempore architecto fuga nisi corrupti adipisci rem debitis,
-                nulla obcaecati deleniti minima impedit quidem illum. Et, saepe! Cumque, eligendi quia.
+                Como desenvolvedor full stack, transformo ideias em soluções digitais completas, criando aplicações que combinam front-end interativo, back-end robusto e boas práticas de arquitetura. 
+                Meu objetivo é entregar experiências funcionais, elegantes e que realmente façam a diferença para quem utiliza.
             </p>
-            <button class="resume_button">Ver Projetos</button>
+            <a class="resume_button" routerLink="/projects">Ver Projetos</a>
         </div>
         <img src="foto_perfil.jpeg" alt="Foto de Thomás Dixini"/>
     </div>
     <div class="cards" aria-labelledby="main-projects">
         <h2 id="main-projects">Principais Projetos</h2>
         <div class="cards_container">
-            <article class="card">
-                <img src="logo_app_1024.png" alt="Preview do Aplicativo de Estética"/>
-                <div class="card_presentation">
-                    <h3>Aplicativo de Estética</h3>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloribus, 
-                        vel impedit soluta dignissimos voluptatum cupiditate sed 
-                        repudiandae nostrum similique error tenetur incidunt aperiam temporibus, 
-                        molestias aliquid officia ipsa rem at.
-                    </p>
-                </div>
-            </article>
-            <article class="card">
-                <img src="logo_app_1024.png" alt="Preview do Aplicativo de Estética"/>
-                <div class="card_presentation">
-                    <h3>Aplicativo de Estética</h3>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloribus, 
-                        vel impedit soluta dignissimos voluptatum cupiditate sed 
-                        repudiandae nostrum similique error tenetur incidunt aperiam temporibus, 
-                        molestias aliquid officia ipsa rem at.
-                    </p>
-                </div>
-            </article>
-            <article class="card">
-                <img src="logo_app_1024.png" alt="Preview do Aplicativo de Estética"/>
-                <div class="card_presentation">
-                    <h3>Aplicativo de Estética</h3>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloribus, 
-                        vel impedit soluta dignissimos voluptatum cupiditate sed 
-                        repudiandae nostrum similique error tenetur incidunt aperiam temporibus, 
-                        molestias aliquid officia ipsa rem at.
-                    </p>
-                </div>
-            </article>
+            @for (project of projects; track $index) {
+                <article class="card" [routerLink]="['/projects', project.id]">
+                    <img src="{{ project.image }}" alt="{{ project.alt }}"/>
+                    <div class="card_presentation">
+                        <h3>{{ project.name }}</h3>
+                        <p>{{ project.description }}</p>
+                    </div>
+                </article>
+            }
         </div>
     </div>
 </section>

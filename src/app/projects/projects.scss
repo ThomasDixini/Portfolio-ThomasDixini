@@ -36,6 +36,12 @@
                 background-color: $options_color;
                 padding: 0.5rem 1rem;
                 border-radius: 50px;
+                cursor: pointer;
+                transition: all 0.2s;
+            }
+
+            li:hover {
+                background-color: $button_color;
             }
 
             li.active {
@@ -47,9 +53,10 @@
     .carousel_projects {
         margin-top: 4rem;
         max-width: 1600px;
+        width: 100%;
 
         .card {
-            margin-right: 2rem;
+            width: 100%;
             background-color: $card_color;
             border-radius: 12px;
             box-shadow: 0px 2px 6px $shadow_color;
@@ -76,6 +83,7 @@
                     font-size: 1.25rem; 
                     line-height: 1.6;
                     margin-top: 1rem;
+                    text-align: left;
                     color: $paragraph_color;
                 }
             }
