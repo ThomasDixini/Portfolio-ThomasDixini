@@ -1,19 +1,28 @@
 <section id="project_details" class="project_details_section" aria-labelledby="project_details-section">
     <div class="project_cover">
-        <img src="logo_app_1024.png" alt="Preview do Aplicativo de Estética"/>
         <div class="project_resume">
             <h3>{{ project.name }}</h3>
-            <p> {{ project.resume }} </p>
-            <div class="project_resume_buttons">
+        </div>
+        <div class="carousel_projects">
+            <p-carousel [value]="project.images" [numVisible]="1" [numScroll]="project.images.length" [circular]="true" >
+                <ng-template let-image pTemplate="item">
+                    <article class="card">
+                        <img src="{{ image }}"/>
+                    </article>
+                </ng-template>
+            </p-carousel>
+            <div class="carousel_buttons">
                 <button>Ver demo</button>
-                <button>Github Repo</button>
+                @if (project.showGithubRepo) {
+                    <button class="glass">Github Repo</button>
+                }
             </div>
         </div>
     </div>
     <h2>
         Descrição
     </h2>
-    <p> {{ project.description }}</p>
+    <p> &nbsp; {{ project.description }}</p>
     <h2>
         Tecnologias Usadas
     </h2>
@@ -25,50 +34,30 @@
     <h2>
         Desafios e Soluções
     </h2>
-    <p>
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
-        Optio vero voluptas eius nihil! Ratione earum natus dignissimos iusto voluptates,
-         exercitationem, eius ex porro sit odio neque, tenetur reiciendis sint sapiente.
-    </p>
+    <p> &nbsp; {{ project.challenges }}</p>
     <h2>
         Key Features
     </h2>
     <ul class="key_features">
-        <li>
-            <span>
-                <div class="icon">
-                    <i class="fa-solid fa-check"></i>
-                </div>
-                <p>Alguma breve Descrição</p>
-            </span>
-        </li>
-        <li>
-            <span>
-                <div class="icon">
-                    <i class="fa-solid fa-check"></i>
-                </div>
-                <p>Alguma breve Descrição</p>
-            </span>
-        </li>
-        <li>
-            <span>
-                <div class="icon">
-                    <i class="fa-solid fa-check"></i>
-                </div>
-                <p>Alguma breve Descrição</p>
-            </span>
-        </li>
+        @for (feature of project.features; track $index) {
+            <li>
+                <span>
+                    <div class="icon">
+                        <i class="fa-solid fa-check"></i>
+                    </div>
+                    <p>{{ feature }}</p>
+                </span>
+            </li>
+        }
     </ul>
     <h2>
         Lições aprendidas
     </h2>
-    <p>
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
-        Perferendis velit eligendi sint at. Voluptatum ab soluta 
-        modi facere magnam iste illo quaerat amet asperiores veritatis quis, incidunt minus recusandae expedita.
-    </p>
+    <p> &nbsp; {{ project.lessons }}</p>
     <div class="project_resume_buttons">
         <button>Ver demo</button>
-        <button>Github Repo</button>
+        @if (project.showGithubRepo) {
+            <button class="glass">Github Repo</button>
+        }
     </div>
 </section>

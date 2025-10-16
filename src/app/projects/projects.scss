@@ -62,6 +62,7 @@
             box-shadow: 0px 2px 6px $shadow_color;
             cursor: pointer;
             transition: all 0.2s;
+            border: 1px solid transparent;
 
             img {
                 width: 100%;
@@ -87,6 +88,11 @@
                     color: $paragraph_color;
                 }
             }
+        }
+
+        .card:hover {
+            opacity: 0.8;
+            border: 1px solid $button_color;
         }
     }
 }
