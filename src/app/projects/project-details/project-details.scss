@@ -4,6 +4,7 @@
     max-width: 1600px;
     width: 100%;
     margin: 64px auto;
+    padding: 2rem;
 
     .project_cover {
         position: relative;
@@ -24,6 +25,10 @@
                 cursor: pointer;
                 transition: all 0.2s;
                 border: 1px solid transparent;
+
+                @include respond(lg){
+                    height: 350px;
+                }
 
                 img {
                     width: 100%;
@@ -61,6 +66,18 @@
                 gap: 1rem;
                 margin-top: 5rem;
                 z-index: 99999;
+
+                @include respond(lg){
+                    left: 0%;
+                    right: 0%;
+                    display: grid;
+                    grid-template-columns: repeat(1, 1fr);
+                    padding: 0.5rem 5rem;
+
+                    button {
+                        padding: 8px 16px; 
+                    }
+                }
                 
                 button:first-of-type {
                     padding: 16px 32px; 
@@ -99,6 +116,11 @@
                 font-size: 3rem;
                 font-weight: bold;
                 color: $text_title_color;
+
+                @include respond(sm){
+                    font-size: 2rem;
+                    text-align: center;
+                }
             }
 
             p {
@@ -115,6 +137,10 @@
         margin-top: 5rem;
         font-size: 3rem;
         font-weight: bold;
+
+        @include respond(sm){
+            font-size: 2rem;
+        }
     }
 
     p {
@@ -123,13 +149,20 @@
         line-height: 1.6;
         margin-top: 2rem;
         color: $paragraph_color;
+
+        @include respond(sm){
+            font-size: 1.25rem;
+        }
+    }
+
+    .technology_title {
+        margin-bottom: 3rem;
     }
 
     .technologies {
         list-style: none;
-        display: flex;
-        align-items: center;
-        justify-content: flex-start;
+        display: grid;
+        grid-template-columns: auto;
         gap: 1rem;
 
         li {
@@ -138,7 +171,9 @@
             background-color: #0f2b45;
             color: $button_color;
             font-size: 1.5rem;
-            margin-top: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
     }
 
@@ -160,6 +195,13 @@
                 align-items: center;
                 justify-content: center;
             }
+
+            @include respond(sm){
+                p {
+                    font-size: 1rem;
+                }
+            }
+            
         }
     }
 
