@@ -1,11 +1,32 @@
 <section id="contact" class="contact_section" aria-labelledby="contact-section">
     <h2>Me contate</h2>
     <p>Sinta-se livre para entrar em contato comigo!</p>
-    <input type="text" placeholder="Seu nome"/>
-    <input type="email" placeholder="Seu Email"/>
-    <input type="text" placeholder="Título"/>
-    <textarea  placeholder="Mensagem"></textarea>
-    <button>Enviar Mensagem</button>
-    <div></div>
+    <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="form">
+        <input type="text" placeholder="Seu nome" formControlName="name"/>
+        @if (contactForm.get('name')?.hasError('required') && contactForm.get('name')?.touched) {
+            <div class="error">
+                <small>Nome é obrigatório.</small>
+            </div>
+        }
+        <input type="email" placeholder="Seu Email" formControlName="email"/>
+        @if (contactForm.get('email')?.hasError('required') && contactForm.get('email')?.touched) {
+            <div class="error">
+                <small>Email é obrigatório.</small>
+            </div>
+        }
+        <input type="text" placeholder="Título" formControlName="title"/>
+        @if (contactForm.get('title')?.hasError('required') && contactForm.get('title')?.touched) {
+            <div class="error">
+                <small>Título é obrigatório.</small>
+            </div>
+        }
+        <textarea  placeholder="Mensagem" formControlName="message"></textarea>
+        @if (contactForm.get('message')?.hasError('required') && contactForm.get('message')?.touched) {
+            <div class="error">
+                <small>Mensagem é obrigatório.</small>
+            </div>
+        }
+        <button>Enviar Mensagem</button>
+    </form>
     <p>Ou me contate diretamente em: <a href="mailto:thomasdixini@gmail.com">thomasdixini@gmail.com</a></p>
 </section>
