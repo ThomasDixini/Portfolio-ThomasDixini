@@ -1,15 +1,27 @@
 <header class="header">
     <div class="container">
-        <a>
+        <a class="logo">
             <i class="fas fa-code"></i> Dev Thomás
         </a>
         <nav aria-label="Menu Principal" class="menu">
             <ul class="menu_items">
-                <li><a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Sobre</a></li>
-                <li><a routerLink="/projects" routerLinkActive="active">Projetos</a></li>
-                <li><a routerLink="/contact" routerLinkActive="active">Contato</a></li>
+                <li><a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+                    <span class="menu_text">Sobre</span>
+                    <i class="menu_icon fa-brands fa-readme"></i>
+                </a></li>
+                <li><a routerLink="/projects" routerLinkActive="active">
+                    <span class="menu_text">Projetos</span>
+                    <i class="menu_icon fa-solid fa-folder"></i>
+                </a></li>
+                <li><a routerLink="/contact" routerLinkActive="active">
+                    <span class="menu_text">Contato</span>
+                    <i class="menu_icon fa-solid fa-address-card"></i>
+                </a></li>
             </ul>
         </nav>
-        <button class="resume_button" (click)="baixarArquivo()">Currículo</button>
+        <button class="resume_button" (click)="baixarArquivo()">
+            <span class="menu_text">Currículo</span>
+            <i class="menu_icon fa-solid fa-file"></i>
+        </button>
     </div>
 </header>

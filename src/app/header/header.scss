@@ -16,6 +16,26 @@
         justify-content: space-between;
         align-items: center;
 
+        .logo {
+            @include respond(lg){
+                display: none;
+            }
+        }
+
+        .menu_icon {
+            display: none;
+
+            @include respond(lg){
+                display: inline-block;
+            }
+        }
+
+        .menu_text {
+            @include respond(lg){
+                display: none;
+            }
+        }
+
         .resume_button {
             padding: 8px 16px; 
             border-radius: 4px;

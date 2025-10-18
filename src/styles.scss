@@ -12,6 +12,21 @@ $card_color: #18212d;
 $options_color: #1f2937;
 $paragraph_color: #9aa1ad;
 
+$breakpoints: (
+  xs: 480px,
+  sm: 640px,
+  md: 768px,
+  lg: 1024px,
+  xl: 1280px,
+  xxl: 1536px
+);
+
+@mixin respond($size) {
+  @media (max-width: map-get($breakpoints, $size)) {
+    @content;
+  }
+}
+
 
 * {
     box-sizing: border-box;
@@ -22,6 +37,10 @@ $paragraph_color: #9aa1ad;
         font-weight: bold;
         font-family: $primary_font;
     }
+}
+
+html {
+    padding: 0;
 }
 
 
