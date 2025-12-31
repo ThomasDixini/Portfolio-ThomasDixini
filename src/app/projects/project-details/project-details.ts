@@ -3,10 +3,11 @@ import { ActivatedRoute } from '@angular/router';
 import { Project } from '../models/Project';
 import { ProjectService } from '../../../services/project-service';
 import { CarouselModule } from 'primeng/carousel';
+import { JsonPipe } from '@angular/common';
 
 @Component({
   selector: 'app-project-details',
-  imports: [CarouselModule],
+  imports: [CarouselModule, JsonPipe],
   templateUrl: './project-details.html',
   styleUrl: './project-details.scss'
 })
@@ -19,5 +20,6 @@ export class ProjectDetails {
   constructor(){
     this._projectId = Number(this.activatedRoute.snapshot.paramMap.get('id'));
     this.project = this.projectService.getProjects().find(c => c.id === this._projectId)!;
+    console.log(this.project);
   }
 }

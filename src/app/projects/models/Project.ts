@@ -11,5 +11,6 @@ export interface Project {
     images: string[];
     showGithubRepo: boolean;
     technologies: string[]
-    features: string[]
+    features: string[],
+    link: string;
 }

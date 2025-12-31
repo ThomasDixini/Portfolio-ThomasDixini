@@ -9,14 +9,18 @@ export class ProjectService {
     {
       id: 1,
       name: 'Aplicativo de Estética',
-      image: 'logo_app_1024.png',
+      image: 'project_estetica/Procedimentos.png',
       images: [
-        'logo_app_1024.png',
-        'logo_app_1024.png',
-        'logo_app_1024.png',
-        'logo_app_1024.png',
-        'logo_app_1024.png',
-        'logo_app_1024.png',
+        'project_estetica/Procedimentos.png',
+        'project_estetica/Consultas.png',
+        'project_estetica/AgendarConsulta1.png',
+        'project_estetica/Produtos.png',
+        'project_estetica/produto.png',
+        'project_estetica/Tela Login.png',
+        'project_estetica/TelaDeCadastro.png',
+        'project_estetica/login.png',
+        'project_estetica/usuario.png',
+        'project_estetica/Drawer.png',
       ],
       resume: 'Aplicativo de agendamento de consultas de estética, que facilita o gerenciamento de atendimentos e melhora a experiência de clientes e profissional. ',
       description: `Aplicativo desenvolvido para otimizar o gerenciamento de atendimentos estéticos e aprimorar a experiência tanto do cliente quanto da profissional.
@@ -54,7 +58,9 @@ export class ProjectService {
         'Azure',
         'Firebase Cloud Messaging',
         'Expo Notifications',
-        'JWT Authentication'
+        'JWT Authentication',
+        'Docker',
+        'NGINX'
       ],
       features: [
         'Desenvolvimento de APIs RESTful seguindo boas práticas de arquitetura.',
@@ -63,8 +69,11 @@ export class ProjectService {
         'Publicação e deploy de aplicações na Microsoft Azure.',
         'Integração de Firebase Cloud Messaging (FCM) para envio de notificações push.',
         'Uso do Expo Notifications para gerenciamento de notificações em aplicativos Android.',
-        'Otimização de desempenho com paginação eficiente no carregamento de dados.'
-      ]
+        'Otimização de desempenho com paginação eficiente no carregamento de dados.',
+        'Configuração de ambientes Docker para desenvolvimento.',
+        'Load balancing e proxy reverso utilizando NGINX.',
+      ],
+      link: 'https://www.github.com/ThomasDixini/AplicativoEsteticaDemonstracao'
     },
   ];
 
