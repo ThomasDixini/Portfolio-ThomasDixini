@@ -75,6 +75,64 @@ export class ProjectService {
       ],
       link: 'https://www.github.com/ThomasDixini/AplicativoEsteticaDemonstracao'
     },
+    {
+      id: 2,
+      name: 'Event-Driven Notifications',
+      image: 'project_rabbitmq/rabbitmq.png',
+      images: [
+        'project_rabbitmq/rabbitmq.png',
+      ],
+      resume: 'Demonstração de arquitetura orientada a eventos com .NET 10 e RabbitMQ, focada em desacoplamento de serviços e processamento assíncrono de notificações.',
+      description: `Sistema de notificações assíncronas para clínica estética desenvolvido para demonstrar arquitetura orientada a eventos na prática.
+
+        Quando um agendamento é confirmado ou cancelado, a API publica um evento no RabbitMQ através de um Direct Exchange, que roteia a mensagem para filas independentes, uma para clientes e outra para administradores. Cada fila é consumida por um Worker Service rodando em background, responsável por processar o evento e enviar a notificação push via Expo Push Notifications.
+
+        A separação em duas filas independentes permite escalar o processamento de notificações para ADM de forma independente do cliente, monitorar cada fluxo separadamente e aplicar regras distintas por destinatário sem acoplamento entre eles.
+
+        O projeto foi estruturado em três camadas, Demo.API, Demo.Consumer e Demo.Contracts, com interfaces desacopladas que permitem trocar o broker de mensageria sem impacto no domínio da aplicação.`,
+      challenges: `
+        Um dos principais desafios foi entender o ciclo de vida das conexões com o RabbitMQ em um contexto de injeção de dependência do .NET. A conexão com o broker é cara de criar e deve ser reutilizada durante toda a vida da aplicação, o que exigiu registrar o publisher como Singleton e gerenciar corretamente o seu ciclo de vida e o Dispose assíncrono.
+
+        Outro desafio foi garantir a resiliência no processamento das mensagens. Configurar o ack manual corretamente, confirmando a mensagem apenas após o processamento bem-sucedido e enviando para a Dead Letter Queue em caso de falha, foi essencial para evitar perda silenciosa de mensagens ou loops infinitos de reprocessamento.
+
+        A integração entre os Workers e os Handlers também exigiu atenção: Workers são Singletons por natureza, mas os Handlers precisam de um escopo por mensagem processada, o que foi resolvido com IServiceProvider e CreateScope() a cada consumo.
+      `,
+      lessons: `
+        Durante o desenvolvimento deste projeto, aprofundei meu entendimento sobre mensageria assíncrona e os padrões que tornam sistemas distribuídos mais resilientes e desacoplados.
+
+        Aprendi na prática a diferença entre requeue: true, requeue: false e Dead Letter Queue, e como cada escolha impacta diretamente a confiabilidade do sistema em produção.
+
+        Entendi como estruturar projetos orientados a eventos com separação clara entre contratos, publicação e consumo, aplicando interfaces para desacoplar o domínio da infraestrutura de mensageria.
+
+        Também evoluí na configuração de ambientes com Docker Compose orquestrando múltiplos serviços com healthcheck e dependências entre containers, garantindo que o RabbitMQ esteja pronto antes da API e do Consumer iniciarem.
+      `,
+      type: 'Backend',
+      alt: 'Diagrama de arquitetura do projeto Event-Driven Notifications',
+      showGithubRepo: false,
+      technologies: [
+        '.NET 10',
+        'RabbitMQ',
+        'Worker Service',
+        'Docker',
+        'Docker Compose',
+        'GitHub Actions',
+        'Expo Push Notifications',
+        'C#',
+        'xUnit',
+      ],
+      features: [
+        'Arquitetura orientada a eventos com Direct Exchange e roteamento por routing keys.',
+        'Filas independentes para clientes e administradores com priorização de mensagens para ADM.',
+        'Dead Letter Queue configurada por fila para retenção e reprocessamento de falhas.',
+        'Worker Services consumindo filas em background com IHostedService e ack manual.',
+        'Publisher registrado como Singleton com gerenciamento correto de conexão e Dispose assíncrono.',
+        'Contratos compartilhados entre API e Consumer via projeto Demo.Contracts com interfaces desacopladas.',
+        'Integração com Expo Push Notifications para envio de alertas em tempo real.',
+        'Docker Compose orquestrando API, Consumer e RabbitMQ com healthcheck e depends_on.',
+        'CI/CD com GitHub Actions executando build a cada push para main.',
+      ],
+      link: 'https://github.com/ThomasDixini/dotnet-rabbitmq-demo'
+    },
   ];
 
   public getProjects(): Project[] {
