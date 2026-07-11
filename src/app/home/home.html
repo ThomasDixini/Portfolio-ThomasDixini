@@ -1,0 +1,37 @@
+<div class="glow glow_top"></div>
+<div class="glow glow_bottom"></div>
+
+<div class="page_content">
+    <app-hero></app-hero>
+    <app-about></app-about>
+    <app-stack></app-stack>
+    <app-experience></app-experience>
+
+    <section id="projetos" class="projects_section" aria-labelledby="projects-title">
+        <div class="kicker">{{ t().kicker }}</div>
+        <h2 id="projects-title">{{ t().title }}</h2>
+        <div class="grid">
+            @for (project of projects(); track project.id) {
+                <a class="card" href="{{ project.link }}" target="_blank" rel="noopener noreferrer">
+                    <div class="cover" [class.dark-cover]="project.image.endsWith('.svg')">
+                        <img src="{{ project.image }}" alt="{{ project.alt }}"/>
+                    </div>
+                    <div class="body">
+                        <div class="head">
+                            <h3>{{ project.name }}</h3>
+                            <span class="tag">{{ project.type }}</span>
+                        </div>
+                        <p>{{ project.resume }}</p>
+                        <div class="tech">
+                            @for (tech of project.technologies.slice(0, 4); track tech) {
+                                <span>{{ tech }}</span>
+                            }
+                        </div>
+                    </div>
+                </a>
+            }
+        </div>
+    </section>
+
+    <app-contact></app-contact>
+</div>

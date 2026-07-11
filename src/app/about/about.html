@@ -1,29 +1,12 @@
-<section id="about" class="about_section" aria-labelledby="perfil-section">
-    <h2 id="about-title" class="visually-hidden">Sobre mim</h2>
-
-    <div class="perfil">
-        <div class="perfil_text">
-            <h2>Olá, Eu sou Thomás Dixini</h2>
-            <p> 
-                Como desenvolvedor full stack, transformo ideias em soluções digitais completas, criando aplicações que combinam front-end interativo, back-end robusto e boas práticas de arquitetura. 
-                Meu objetivo é entregar experiências funcionais, elegantes e que realmente façam a diferença para quem utiliza.
-            </p>
-            <a class="resume_button" routerLink="/projects">Ver Projetos</a>
-        </div>
+<section id="sobre" class="about_section" aria-labelledby="about-title">
+    <div class="photo">
         <img src="foto_perfil.jpeg" alt="Foto de Thomás Dixini"/>
     </div>
-    <div class="cards" aria-labelledby="main-projects">
-        <h2 id="main-projects">Principais Projetos</h2>
-        <div class="cards_container">
-            @for (project of projects; track $index) {
-                <article class="card" [routerLink]="['/projects', project.id]">
-                    <img src="{{ project.image }}" alt="{{ project.alt }}"/>
-                    <div class="card_presentation">
-                        <h3>{{ project.name }}</h3>
-                        <p>{{ project.resume }}</p>
-                    </div>
-                </article>
-            }
-        </div>
+    <div class="text">
+        <div class="kicker">{{ t().kicker }}</div>
+        <h2 id="about-title">{{ t().title }}</h2>
+        <p>{{ t().p1 }}</p>
+        <p>{{ t().p2 }}</p>
+        <a class="resume_button" href="#projetos">{{ t().cta }}</a>
     </div>
 </section>

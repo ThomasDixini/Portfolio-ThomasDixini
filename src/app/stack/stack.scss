@@ -1,0 +1,66 @@
+@import '../../styles.scss';
+
+.stack_section {
+    max-width: 1600px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 4rem 1.5rem;
+    border-top: 1px solid $secondary_color;
+
+    .kicker {
+        font-family: $mono_font;
+        font-size: 0.8rem;
+        color: $accent_color;
+        letter-spacing: 0.05em;
+        margin-bottom: 0.9rem;
+    }
+
+    h2 {
+        font-weight: 700;
+        font-size: 2.15rem;
+        margin: 0 0 2.5rem;
+
+        @include respond(sm) {
+            font-size: 1.75rem;
+        }
+    }
+
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1rem;
+
+        @include respond(lg) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+        @include respond(xs) {
+            grid-template-columns: 1fr;
+        }
+
+        .chip {
+            padding: 1.35rem;
+            border-radius: 14px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            background: $card_color;
+            transition: all 0.2s;
+
+            &:hover {
+                border-color: rgba(255, 122, 26, 0.4);
+                background: rgba(255, 122, 26, 0.05);
+            }
+
+            .chip_name {
+                font-family: $heading_font;
+                font-weight: 600;
+                font-size: 1.1rem;
+                margin-bottom: 0.35rem;
+            }
+
+            .chip_tag {
+                font-family: $mono_font;
+                font-size: 0.75rem;
+                color: $paragraph_color_dim;
+            }
+        }
+    }
+}

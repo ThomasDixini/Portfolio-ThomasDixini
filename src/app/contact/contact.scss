@@ -1,77 +1,125 @@
 @import '../../styles.scss';
 
 .contact_section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    max-width: 800px;
+    max-width: 1600px;
     width: 100%;
-    margin: 64px auto;
-    padding: 1.5rem;
+    margin: 0 auto;
+    padding: 4rem 1.5rem 5rem;
+    border-top: 1px solid $secondary_color;
 
-    .form {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+    .contact_card {
+        position: relative;
+        overflow: hidden;
         max-width: 800px;
         width: 100%;
-        gap: 2rem;
-    }
-
-    h2 {
-        font-size: 3rem;
-        font-weight: bold;
-    }
-
-    p:first-of-type {
-        font-size: 1.5rem; 
-        line-height: 2;
-        margin-top: 1rem;
+        margin: 0 auto;
+        border-radius: 24px;
+        border: 1px solid rgba(255, 122, 26, 0.2);
+        background: linear-gradient(135deg, #141114, #0d0d10);
+        padding: 3.5rem 3rem;
         text-align: center;
-    }
 
-    input:first-of-type {
-        margin-top: 2rem;
-    }
+        @include respond(xs) {
+            padding: 2.5rem 1.5rem;
+        }
 
-    input, textarea {
-        padding: 1rem;
-        width: 100%;
-        border-radius: 8px;
-        border-style: none;
-        background-color: transparent;
-        border: 2px solid $secondary_color;
-    }
+        .card_glow {
+            position: absolute;
+            z-index: 0;
+            top: -120px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 520px;
+            height: 340px;
+            background: radial-gradient(circle, rgba(255, 122, 26, 0.22), transparent 65%);
+            filter: blur(30px);
+            pointer-events: none;
+        }
 
-    textarea {
-        height: 10rem;
-    }
+        .card_content {
+            position: relative;
+            z-index: 1;
+        }
 
-    button {
-        align-self: flex-end;
-        width: fit-content;
-        padding: 16px 16px; 
-        border-radius: 8px;
-        font-size: 1.25rem;
-        background-color: $button_color;
-        color: $text_title_color;
-        cursor: pointer;
-    }
+        .kicker {
+            font-family: $mono_font;
+            font-size: 0.8rem;
+            color: $accent_color;
+            letter-spacing: 0.05em;
+            margin-bottom: 1rem;
+        }
 
-    button:hover {
-        background-color: $button_color_hover;
-        transition: ease-in-out 0.2s;
-    }
+        h2 {
+            font-weight: 700;
+            font-size: 2.3rem;
+            line-height: 1.1;
+            margin: 0 0 0.9rem;
 
-    p {
-        margin-top: 3rem;
-        text-align: center;
-    }
+            @include respond(xs) {
+                font-size: 1.6rem;
+            }
+        }
 
-    .error {
-        color: red;
-        margin-top: -1rem;
-        margin-right: auto; 
-        margin-left: 1rem;
+        .intro {
+            font-size: 1.05rem;
+            color: $paragraph_color;
+            margin: 0 auto 2rem;
+            max-width: 460px;
+        }
+
+        .form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            gap: 1.25rem;
+            text-align: left;
+
+            input, textarea {
+                padding: 1rem;
+                width: 100%;
+                border-radius: 8px;
+                border-style: none;
+                background-color: rgba(255, 255, 255, 0.03);
+                border: 1px solid rgba(255, 255, 255, 0.12);
+                color: $text_title_color;
+                font-family: $primary_font;
+            }
+
+            textarea {
+                height: 8rem;
+            }
+
+            button {
+                align-self: center;
+                width: fit-content;
+                padding: 14px 28px;
+                border-radius: 12px;
+                font-size: 1rem;
+                background-color: $button_color;
+                color: $button_text_color;
+                cursor: pointer;
+            }
+
+            button:hover {
+                background-color: $button_color_hover;
+                transition: ease-in-out 0.2s;
+            }
+
+            .error {
+                color: #ff6b6b;
+                margin-top: -0.75rem;
+                align-self: flex-start;
+            }
+        }
+
+        .direct {
+            margin-top: 2rem;
+            color: $paragraph_color;
+
+            a {
+                color: $accent_color;
+            }
+        }
     }
 }

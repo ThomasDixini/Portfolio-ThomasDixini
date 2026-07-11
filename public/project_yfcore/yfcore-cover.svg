@@ -1,0 +1,62 @@
+<svg viewBox="0 0 1300 500" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0d0d10"/>
+      <stop offset="100%" stop-color="#08080a"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="42%" r="55%">
+      <stop offset="0%" stop-color="#ff7a1a" stop-opacity="0.28"/>
+      <stop offset="50%" stop-color="#ff7a1a" stop-opacity="0.07"/>
+      <stop offset="100%" stop-color="#ff7a1a" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="blur1"><feGaussianBlur stdDeviation="24"/></filter>
+  </defs>
+
+  <rect width="1300" height="500" fill="url(#bg)"/>
+  <circle cx="650" cy="220" r="360" fill="url(#glow)" filter="url(#blur1)"/>
+
+  <!-- decorative background rings (Clean Architecture motif), centered, may bleed off edges -->
+  <g transform="translate(650,250)" fill="none" stroke="#ff7a1a">
+    <circle r="330" stroke-opacity="0.10" stroke-width="2"/>
+    <circle r="255" stroke-opacity="0.14" stroke-width="2"/>
+    <circle r="180" stroke-opacity="0.18" stroke-width="2"/>
+    <circle r="105" stroke-opacity="0.24" stroke-width="2"/>
+  </g>
+
+  <!-- centered content, kept within safe crop zone -->
+  <g font-family="Arial, Helvetica, sans-serif" text-anchor="middle">
+    <text x="650" y="215" font-size="86" font-weight="700" fill="#f4f4f5">YF<tspan fill="#ff7a1a">Core</tspan></text>
+    <text x="650" y="260" font-size="21" fill="#ff9347" font-family="Courier New, monospace" letter-spacing="1">.NET Backend API</text>
+    <text x="650" y="292" font-size="16" fill="#a1a1ab" font-family="Courier New, monospace">Clean Architecture &#183; DDD &#183; CQRS</text>
+
+    <!-- tech chips row -->
+    <g font-family="Courier New, monospace" font-size="14" fill="#d6d6da">
+      <g transform="translate(285,325)">
+        <rect width="94" height="36" rx="18" fill="#1a1a1f" stroke="#2a2a30"/>
+        <text x="47" y="24" text-anchor="middle">.NET 10</text>
+      </g>
+      <g transform="translate(391,325)">
+        <rect width="70" height="36" rx="18" fill="#1a1a1f" stroke="#2a2a30"/>
+        <text x="35" y="24" text-anchor="middle">C#</text>
+      </g>
+      <g transform="translate(473,325)">
+        <rect width="100" height="36" rx="18" fill="#1a1a1f" stroke="#2a2a30"/>
+        <text x="50" y="24" text-anchor="middle">DDD</text>
+      </g>
+      <g transform="translate(585,325)">
+        <rect width="104" height="36" rx="18" fill="#1a1a1f" stroke="#2a2a30"/>
+        <text x="52" y="24" text-anchor="middle">CQRS</text>
+      </g>
+      <g transform="translate(701,325)">
+        <rect width="94" height="36" rx="18" fill="#1a1a1f" stroke="#2a2a30"/>
+        <text x="47" y="24" text-anchor="middle">JWT</text>
+      </g>
+      <g transform="translate(807,325)">
+        <rect width="108" height="36" rx="18" fill="#1a1a1f" stroke="#2a2a30"/>
+        <text x="54" y="24" text-anchor="middle">EF Core</text>
+      </g>
+    </g>
+  </g>
+
+  <text x="650" y="470" font-size="14" fill="#6b6b73" font-family="Courier New, monospace" text-anchor="middle">github.com/ThomasDixini/YFCore</text>
+</svg>
