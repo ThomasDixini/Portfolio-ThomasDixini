@@ -1,27 +1,39 @@
 <header class="header">
     <div class="container">
-        <a class="logo">
-            <i class="fas fa-code"></i> Dev Thomás
+        <a class="logo" href="#hero">
+            <span class="logo_badge">TD</span>
+            <span class="logo_name">Thomás Dixini</span>
         </a>
         <nav aria-label="Menu Principal" class="menu">
             <ul class="menu_items">
-                <li><a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
-                    <span class="menu_text">Sobre</span>
+                <li><a href="#sobre">
+                    <span class="menu_text">{{ t().about }}</span>
                     <i class="menu_icon fa-brands fa-readme"></i>
                 </a></li>
-                <li><a routerLink="/projects" routerLinkActive="active">
-                    <span class="menu_text">Projetos</span>
-                    <i class="menu_icon fa-solid fa-folder"></i>
+                <li><a href="#stack">
+                    <span class="menu_text">{{ t().stack }}</span>
+                    <i class="menu_icon fa-solid fa-layer-group"></i>
                 </a></li>
-                <li><a routerLink="/contact" routerLinkActive="active">
-                    <span class="menu_text">Contato</span>
-                    <i class="menu_icon fa-solid fa-address-card"></i>
+                <li><a href="#experiencia">
+                    <span class="menu_text">{{ t().experience }}</span>
+                    <i class="menu_icon fa-solid fa-briefcase"></i>
+                </a></li>
+                <li><a href="#projetos">
+                    <span class="menu_text">{{ t().projects }}</span>
+                    <i class="menu_icon fa-solid fa-folder"></i>
                 </a></li>
             </ul>
         </nav>
-        <button class="resume_button" (click)="baixarArquivo()">
-            <span class="menu_text">Currículo</span>
-            <i class="menu_icon fa-solid fa-file"></i>
-        </button>
+        <div class="actions">
+            <button class="lang_toggle" (click)="toggleLang()" [attr.aria-label]="'Toggle language'">
+                <span [class.active]="lang() === 'pt'">PT</span>
+                <span class="sep">/</span>
+                <span [class.active]="lang() === 'en'">EN</span>
+            </button>
+            <button class="resume_button" (click)="baixarArquivo()">
+                <span class="menu_text">{{ t().resume }}</span>
+                <i class="menu_icon fa-solid fa-file"></i>
+            </button>
+        </div>
     </div>
 </header>

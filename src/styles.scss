@@ -1,16 +1,22 @@
 /* You can add global styles to this file, and also import other style files */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap');
 
-$primary_color: #101922;
-$primary_font: 'Inter', sans-serif;
-$secondary_color: #1f2834;
-$text_title_color: #e1e1e1;
-$button_color: #2751ca;
-$button_color_hover: #0b345e;
-$shadow_color: #020508;
-$card_color: #18212d;
-$options_color: #1f2937;
-$paragraph_color: #9aa1ad;
+$primary_color: #08080a;
+$primary_font: 'Manrope', sans-serif;
+$heading_font: 'Space Grotesk', sans-serif;
+$mono_font: 'JetBrains Mono', monospace;
+$secondary_color: rgba(255, 255, 255, 0.08);
+$text_title_color: #f4f4f5;
+$button_text_color: #0a0a0a;
+$button_color: #ff7a1a;
+$button_color_hover: #ff9347;
+$shadow_color: rgba(0, 0, 0, 0.5);
+$card_color: rgba(255, 255, 255, 0.02);
+$options_color: rgba(255, 255, 255, 0.04);
+$paragraph_color: #a1a1ab;
+$paragraph_color_dim: #8a8a92;
+$accent_color: #ff7a1a;
+$accent_color_hover: #ff9347;
 
 $breakpoints: (
   xs: 480px,
@@ -48,4 +54,37 @@ body {
     background-color: $primary_color;
     font-family: $primary_font;
     color: $text_title_color;
+    -webkit-font-smoothing: antialiased;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: $heading_font;
+    letter-spacing: -0.02em;
+}
+
+::selection {
+    background: rgba(255, 122, 26, 0.3);
+    color: #fff;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: $primary_color;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #26262b;
+    border-radius: 8px;
+}
+
+@keyframes glowPulse {
+    0%, 100% { opacity: 0.55; }
+    50% { opacity: 0.9; }
 }

@@ -8,82 +8,71 @@ export class ProjectService {
   private _projects: Project[] = [
     {
       id: 1,
-      name: 'Aplicativo de Estética',
-      image: 'project_estetica/Procedimentos.png',
+      name: 'YFCore',
+      image: 'project_yfcore/yfcore-cover.svg',
       images: [
-        'project_estetica/Procedimentos.png',
-        'project_estetica/Consultas.png',
-        'project_estetica/AgendarConsulta1.png',
-        'project_estetica/Produtos.png',
-        'project_estetica/produto.png',
-        'project_estetica/Tela Login.png',
-        'project_estetica/TelaDeCadastro.png',
-        'project_estetica/login.png',
-        'project_estetica/usuario.png',
-        'project_estetica/Drawer.png',
+        'project_yfcore/yfcore-cover.svg',
       ],
-      resume: 'Aplicativo de agendamento de consultas de estética, que facilita o gerenciamento de atendimentos e melhora a experiência de clientes e profissional. ',
-      description: `Aplicativo desenvolvido para otimizar o gerenciamento de atendimentos estéticos e aprimorar a experiência tanto do cliente quanto da profissional.
-        A plataforma permite que clientes agendem procedimentos de forma rápida e intuitiva, consultem valores e descrições detalhadas dos serviços, e recebam notificações de lembrete sobre seus horários marcados.
+      resume: 'Backend desenvolvido em ASP.NET Core utilizando Domain-Driven Design (DDD), Clean Architecture, CQRS, Entity Framework Core e JWT Authentication, com foco em escalabilidade, manutenção e boas práticas de desenvolvimento.',
+      description: `Sistema para gerenciamento de agendamentos de clínica estética, construído com Domain-Driven Design (DDD) e Clean Architecture, separando o domínio em camadas (Domain, Application, Infrastructure, API) com responsabilidades bem definidas.
+        A API expõe os casos de uso via CQRS com MediatR, separando comandos de queries e mantendo a lógica de negócio isolada de detalhes de infraestrutura. Autenticação e autorização são feitas com ASP.NET Identity e JWT, com validação de entrada centralizada via FluentValidation.
 
-        Para a profissional, o app oferece ferramentas de controle e organização dos atendimentos, além de possibilitar o vínculo direto entre serviços e clientes.
-        O aplicativo também conta com uma seção de produtos disponíveis para venda, onde o usuário pode iniciar uma conversa com a profissional via integração com o WhatsApp para obter mais informações.
-
-        Em resumo, o projeto reúne praticidade, automação e comunicação em um único ambiente digital, trazendo mais eficiência na gestão de horários e conveniência para os clientes.`,
+        A documentação da API é gerada com Scalar API Reference, e o projeto conta com cobertura de testes unitários e de integração usando xUnit, Moq e FluentAssertions, com pipeline de CI/CD via GitHub Actions.`,
       challenges: `
-        Um dos principais desafios do projeto foi o desenvolvimento multiplataforma, garantindo que a aplicação funcionasse corretamente em Android, iOS e Web.
-        O foco inicial estava no Android, núcleo principal do aplicativo, mas foi necessário adaptar e reestruturar algumas funcionalidades para criar também uma versão web compatível com iOS, mantendo a mesma experiência do usuário em todas as plataformas.
+        Um dos principais desafios foi modelar o domínio de agendamentos respeitando os limites de contexto do DDD, evitando que regras de negócio vazassem para as camadas de infraestrutura ou apresentação.
 
-        Outro desafio importante foi a integração de notificações push em múltiplos ambientes. Para isso, foi implementado um sistema que gerencia permissões de notificação, capturando o ID exclusivo do dispositivo para identificar usuários e controlar o envio de alertas.
-        A solução foi desenvolvida utilizando o Expo Notifications para Android e o Firebase Cloud Messaging (FCM) para iOS e Web, assegurando um fluxo de comunicação confiável e integrado.
+        Outro desafio foi estruturar corretamente o fluxo de CQRS com MediatR, definindo quando um caso de uso deveria ser tratado como comando ou como query, mantendo os handlers coesos e testáveis.
+
+        Também foi necessário desenhar as validações de entrada de forma centralizada com FluentValidation, evitando duplicação de regras espalhadas pelos controllers e garantindo mensagens de erro consistentes para os clientes da API.
       `,
       lessons: `
-      Durante o desenvolvimento deste projeto, pude aperfeiçoar a modelagem de tabelas e a estruturação geral da aplicação, aplicando boas práticas de organização e manutenção do código.
-      Evoluí também na criação e implementação de APIs RESTful, aprimorando o controle de rotas, autenticação e comunicação entre serviços.
+        Durante o desenvolvimento deste projeto, aprofundei meu entendimento sobre Domain-Driven Design na prática, aprendendo a modelar entidades, agregados e value objects de forma que o código realmente refletisse as regras do negócio.
 
-      Aprofundei meus conhecimentos sobre Push Notifications, entendendo a importância de solicitar a permissão do usuário e gerenciar corretamente os identificadores de dispositivos.
-      Além disso, adquiri experiência prática com o ecossistema da Microsoft Azure, desde a criação e publicação da API até a integração do banco de dados na nuvem.
+        Evoluí na aplicação de CQRS com MediatR, entendendo os trade-offs entre separar leitura e escrita e como isso simplifica a manutenção de sistemas com regras de negócio complexas.
 
-      Outro ponto importante foi o aprendizado sobre processos de publicação de aplicativos na Play Store, compreendendo as etapas de empacotamento, assinatura e envio para revisão.
-
-      Por fim, tive a oportunidade de trabalhar com um cliente real, o que me permitiu compreender melhor as necessidades do usuário final e propor soluções ideais e personalizadas para o projeto.
+        Também aprendi a importância de uma camada de validação centralizada com FluentValidation e de documentação de API sempre atualizada com Scalar API Reference, além de reforçar boas práticas de testes automatizados com xUnit, Moq e FluentAssertions.
       `,
-      type: 'Mobile',
-      alt: 'Preview do Aplicativo de Estética',
+      type: 'Backend',
+      alt: 'Preview do sistema YFCore',
       showGithubRepo: false,
       technologies: [
-        'React Native',
         'C#',
+        '.NET 10',
+        'ASP.NET Core',
+        'Entity Framework Core',
         'SQL Server',
-        'Azure',
-        'Firebase Cloud Messaging',
-        'Expo Notifications',
+        'MediatR (CQRS)',
+        'Domain-Driven Design (DDD)',
+        'Clean Architecture',
         'JWT Authentication',
-        'Docker',
-        'NGINX'
+        'ASP.NET Identity',
+        'FluentValidation',
+        'Scalar API Reference',
+        'xUnit',
+        'Moq',
+        'FluentAssertions',
+        'GitHub Actions',
       ],
       features: [
-        'Desenvolvimento de APIs RESTful seguindo boas práticas de arquitetura.',
-        'Manipulação e mapeamento de dados utilizando Entity Framework Core',
-        'Implementação de autenticação segura com JWT (JSON Web Token)',
-        'Publicação e deploy de aplicações na Microsoft Azure.',
-        'Integração de Firebase Cloud Messaging (FCM) para envio de notificações push.',
-        'Uso do Expo Notifications para gerenciamento de notificações em aplicativos Android.',
-        'Otimização de desempenho com paginação eficiente no carregamento de dados.',
-        'Configuração de ambientes Docker para desenvolvimento.',
-        'Load balancing e proxy reverso utilizando NGINX.',
+        'Arquitetura em camadas seguindo Domain-Driven Design (DDD) e Clean Architecture.',
+        'CQRS implementado com MediatR, separando comandos e queries.',
+        'Autenticação e autorização com ASP.NET Identity e JWT.',
+        'Validações de entrada centralizadas com FluentValidation.',
+        'Documentação de API gerada com Scalar API Reference.',
+        'Testes unitários e de integração com xUnit, Moq e FluentAssertions.',
+        'Pipeline de CI/CD configurado com GitHub Actions.',
       ],
       link: 'https://www.github.com/ThomasDixini/AplicativoEsteticaDemonstracao'
     },
     {
       id: 2,
-      name: 'Event-Driven Notifications',
+      name: 'Mensageria',
       image: 'project_rabbitmq/rabbitmq.png',
       images: [
         'project_rabbitmq/rabbitmq.png',
       ],
-      resume: 'Demonstração de arquitetura orientada a eventos com .NET 10 e RabbitMQ, focada em desacoplamento de serviços e processamento assíncrono de notificações.',
-      description: `Sistema de notificações assíncronas para clínica estética desenvolvido para demonstrar arquitetura orientada a eventos na prática.
+      resume: 'Sistema de mensageria para processamento assíncrono de dados do YFCore, usando RabbitMQ e Workers para desacoplar o envio de notificações da API principal.',
+      description: `Sistema de notificações assíncronas desenvolvido para o YFCore, demonstrando arquitetura orientada a eventos na prática.
 
         Quando um agendamento é confirmado ou cancelado, a API publica um evento no RabbitMQ através de um Direct Exchange, que roteia a mensagem para filas independentes, uma para clientes e outra para administradores. Cada fila é consumida por um Worker Service rodando em background, responsável por processar o evento e enviar a notificação push via Expo Push Notifications.
 
@@ -107,17 +96,17 @@ export class ProjectService {
         Também evoluí na configuração de ambientes com Docker Compose orquestrando múltiplos serviços com healthcheck e dependências entre containers, garantindo que o RabbitMQ esteja pronto antes da API e do Consumer iniciarem.
       `,
       type: 'Backend',
-      alt: 'Diagrama de arquitetura do projeto Event-Driven Notifications',
+      alt: 'Diagrama de arquitetura do projeto Mensageria',
       showGithubRepo: false,
       technologies: [
+        'C#',
         '.NET 10',
         'RabbitMQ',
-        'Worker Service',
+        'Workers',
         'Docker',
         'Docker Compose',
         'GitHub Actions',
         'Expo Push Notifications',
-        'C#',
         'xUnit',
       ],
       features: [

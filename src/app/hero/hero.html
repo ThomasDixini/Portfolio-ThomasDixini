@@ -1,0 +1,52 @@
+<section id="hero" class="hero_section" aria-labelledby="hero-title">
+    <div class="hero_content">
+        <div class="badge">
+            <span class="dot"></span>
+            {{ t().badge }}
+        </div>
+        <h1 id="hero-title">
+            {{ t().line1 }}<br><span class="accent">{{ t().line2 }}</span>
+        </h1>
+        <p class="desc">
+            {{ t().desc }}
+        </p>
+        <div class="cta">
+            <a href="#projetos" class="btn_primary">{{ t().ctaProjects }}</a>
+            <a href="#contato" class="btn_secondary">{{ t().ctaTalk }}</a>
+        </div>
+        <div class="stats">
+            <div class="stat">
+                <div class="stat_value">{{ t().stat1Value }}</div>
+                <div class="stat_label">{{ t().stat1Label }}</div>
+            </div>
+            <div class="stat">
+                <div class="stat_value">{{ t().stat2Value }}</div>
+                <div class="stat_label">{{ t().stat2Label }}</div>
+            </div>
+            <div class="stat">
+                <div class="stat_value">{{ t().stat3Value }}</div>
+                <div class="stat_label">{{ t().stat3Label }}</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="code_card">
+        <div class="code_card_bar">
+            <span class="dot red"></span>
+            <span class="dot yellow"></span>
+            <span class="dot green"></span>
+            <span class="filename">Developer.cs</span>
+        </div>
+        <pre><span class="kw">public class</span> <span class="tp">Developer</span> : <span class="tp">IEngineer</span>
+&#123;
+    <span class="kw">public string</span> Name =&gt; <span class="str">"Thomás Dixini"</span>;
+    <span class="kw">public string</span> Role =&gt; <span class="str">".NET / C# Backend"</span>;
+
+    <span class="kw">public</span> <span class="tp">Task</span>&lt;<span class="tp">Api</span>&gt; <span class="fn">BuildAsync</span>() =&gt;
+        Design
+            .<span class="fn">Clean</span>()
+            .<span class="fn">Scalable</span>()
+            .<span class="fn">Ship</span>();<span class="cursor">▌</span>
+&#125;</pre>
+    </div>
+</section>

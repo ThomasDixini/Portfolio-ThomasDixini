@@ -1,0 +1,76 @@
+@import '../../styles.scss';
+
+.experience_section {
+    max-width: 1600px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 4rem 1.5rem;
+    border-top: 1px solid $secondary_color;
+
+    .kicker {
+        font-family: $mono_font;
+        font-size: 0.8rem;
+        color: $accent_color;
+        letter-spacing: 0.05em;
+        margin-bottom: 0.9rem;
+    }
+
+    h2 {
+        font-weight: 700;
+        font-size: 2.15rem;
+        margin: 0 0 2.5rem;
+
+        @include respond(sm) {
+            font-size: 1.75rem;
+        }
+    }
+
+    .timeline {
+        display: flex;
+        flex-direction: column;
+
+        .job {
+            display: grid;
+            grid-template-columns: 200px 1fr;
+            gap: 2rem;
+            padding: 1.75rem 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.07);
+
+            @include respond(sm) {
+                grid-template-columns: 1fr;
+                gap: 0.75rem;
+            }
+
+            .job_period {
+                font-family: $mono_font;
+                font-size: 0.8rem;
+                color: $paragraph_color_dim;
+                padding-top: 4px;
+            }
+
+            .job_role {
+                font-family: $heading_font;
+                font-weight: 600;
+                font-size: 1.3rem;
+                margin-bottom: 4px;
+            }
+
+            .job_company {
+                font-size: 0.9rem;
+                color: $accent_color_hover;
+                margin-bottom: 0.9rem;
+            }
+
+            ul {
+                padding-left: 1.1rem;
+
+                li {
+                    font-size: 0.98rem;
+                    line-height: 1.6;
+                    color: $paragraph_color;
+                    margin-bottom: 0.5rem;
+                }
+            }
+        }
+    }
+}

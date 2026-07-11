@@ -1,0 +1,12 @@
+<section id="stack" class="stack_section" aria-labelledby="stack-title">
+    <div class="kicker">{{ t().kicker }}</div>
+    <h2 id="stack-title">{{ t().title }}</h2>
+    <div class="grid">
+        @for (tech of stack; track tech.name) {
+            <div class="chip">
+                <div class="chip_name">{{ tech.name }}</div>
+                <div class="chip_tag">{{ lang() === 'pt' ? tech.tag.pt : tech.tag.en }}</div>
+            </div>
+        }
+    </div>
+</section>

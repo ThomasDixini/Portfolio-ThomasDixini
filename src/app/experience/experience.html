@@ -1,0 +1,20 @@
+<section id="experiencia" class="experience_section" aria-labelledby="experience-title">
+    <div class="kicker">{{ t().kicker }}</div>
+    <h2 id="experience-title">{{ t().title }}</h2>
+    <div class="timeline">
+        @for (job of experiences; track job.company) {
+            <div class="job">
+                <div class="job_period">{{ lang() === 'pt' ? job.period.pt : job.period.en }}</div>
+                <div class="job_content">
+                    <div class="job_role">{{ lang() === 'pt' ? job.role.pt : job.role.en }}</div>
+                    <div class="job_company">{{ job.company }}</div>
+                    <ul>
+                        @for (highlight of job.highlights; track $index) {
+                            <li>{{ lang() === 'pt' ? highlight.pt : highlight.en }}</li>
+                        }
+                    </ul>
+                </div>
+            </div>
+        }
+    </div>
+</section>
