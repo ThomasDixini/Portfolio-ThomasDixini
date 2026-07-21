@@ -62,7 +62,7 @@ export class ProjectService {
         'Testes unitários e de integração com xUnit, Moq e FluentAssertions.',
         'Pipeline de CI/CD configurado com GitHub Actions.',
       ],
-      link: 'https://www.github.com/ThomasDixini/AplicativoEsteticaDemonstracao'
+      link: 'https://github.com/ThomasDixini/YFCore.Backend'
     },
     {
       id: 2,
