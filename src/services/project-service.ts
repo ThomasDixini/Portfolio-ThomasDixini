@@ -8,6 +8,65 @@ export class ProjectService {
   private _projects: Project[] = [
     {
       id: 1,
+      name: 'Lvsport',
+      image: 'project_lvsport/lvsport.png',
+      images: [
+        'project_lvsport/lvsport.png',
+      ],
+      resume: 'E-commerce desenvolvido utilizando ASP.NET Core, Angular e PostgreSQL, com autenticação, gerenciamento de catálogo, processamento de pedidos e integração com Mercado Pago.',
+      description: `Aplicação de e-commerce desenvolvida com frontend em Angular e backend em ASP.NET Core, utilizando PostgreSQL como banco de dados.
+
+        O sistema possui gerenciamento de produtos e categorias, autenticação de usuários, carrinho de compras, processamento de pedidos e integração com o Mercado Pago para pagamentos.
+
+        A aplicação foi estruturada como um monólito modular, mantendo uma separação clara entre API, regras de negócio, domínio e infraestrutura, com foco em simplicidade, manutenção e facilidade de evolução.
+
+        As imagens dos produtos são armazenadas em diferentes resoluções para atender às necessidades de exibição da aplicação, mantendo os arquivos fora do banco de dados.`,
+
+      challenges: `
+        Um dos principais desafios foi estruturar o sistema para atender às necessidades de uma aplicação comercial real, mantendo a arquitetura simples e evitando complexidade desnecessária para o tamanho do projeto.
+
+        Outro desafio foi implementar o fluxo de pedidos e pagamentos, garantindo a comunicação adequada entre o sistema e o Mercado Pago e tratando diferentes estados do processamento da compra.
+
+        Também foi necessário definir uma estratégia para armazenamento e entrega das imagens dos produtos, mantendo os arquivos fora do banco de dados e disponibilizando diferentes resoluções conforme a necessidade do frontend.
+      `,
+
+      lessons: `
+        Durante o desenvolvimento deste projeto, aprofundei minha experiência com o desenvolvimento de aplicações completas utilizando ASP.NET Core, Angular e PostgreSQL.
+
+        Também pude trabalhar com integrações de pagamento em um cenário real, lidando com o fluxo de pedidos e os diferentes estados de uma transação.
+
+        O projeto também reforçou minha experiência em tomar decisões de arquitetura considerando o contexto real da aplicação, buscando um equilíbrio entre organização, simplicidade e facilidade de manutenção.
+      `,
+
+      type: 'Full Stack',
+      alt: 'Preview do e-commerce Lvsport',
+      showGithubRepo: false,
+      technologies: [
+        'C#',
+        '.NET',
+        'ASP.NET Core',
+        'Entity Framework Core',
+        'PostgreSQL',
+        'Angular',
+        'TypeScript',
+        'Mercado Pago',
+        'JWT Authentication',
+      ],
+
+      features: [
+        'Catálogo de produtos e categorias.',
+        'Autenticação e gerenciamento de usuários.',
+        'Carrinho de compras e processamento de pedidos.',
+        'Integração com Mercado Pago para processamento de pagamentos.',
+        'Gerenciamento de produtos e categorias.',
+        'Upload e gerenciamento de imagens dos produtos.',
+        'Armazenamento de imagens em diferentes resoluções.',
+        'API REST desenvolvida com ASP.NET Core.',
+      ],
+      link: 'https://lvsport.com.br'
+    },
+    {
+      id: 2,
       name: 'YFCore',
       image: 'project_yfcore/yfcore-cover.svg',
       images: [
@@ -65,7 +124,7 @@ export class ProjectService {
       link: 'https://github.com/ThomasDixini/YFCore.Backend'
     },
     {
-      id: 2,
+      id: 3,
       name: 'Mensageria',
       image: 'project_rabbitmq/rabbitmq.png',
       images: [
