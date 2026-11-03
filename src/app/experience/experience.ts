@@ -26,7 +26,7 @@ export class Experience {
 
   public experiences: ExperienceItem[] = [
     {
-      period: { pt: 'Nov 2024 - Atualmente', en: 'Nov 2024 - Present' },
+      period: { pt: 'Nov 2022 - Atualmente', en: 'Nov 2022 - Present' },
       role: { pt: 'Desenvolvedor Backend .NET', en: 'Backend .NET Developer' },
       company: 'VMS Informática',
       highlights: [
@@ -57,7 +57,7 @@ export class Experience {
     ],
     },
     {
-      period: { pt: 'Dez 2023 - Out 2024', en: 'Dec 2023 - Oct 2024' },
+      period: { pt: 'Dez 2021 - Nov 2022', en: 'Dec 2021 - Nov 2022' },
       role: { pt: 'Analista de Dados', en: 'Data Analyst' },
       company: 'Dellas Comércio e Transportes',
       highlights: [
